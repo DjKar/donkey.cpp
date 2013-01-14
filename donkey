@@ -1,0 +1,65 @@
+ #include <iostream>
+    #include <cstring>
+    using namespace std;
+     
+    int main()
+    {
+            char nome[50], sesso[8], risp[3];
+            int eta, i=1;
+            cout<<"Come ti chiami?"<<endl;
+            cin.getline(nome,50,'\n');
+            cout<<"Ciao "<<nome<<", quanti anni hai?"<<endl;
+            cin>>eta;
+            cin.ignore(256,'\n');
+            do
+            {
+                    cout<<"Sei maschio o femmina?"<<endl;
+                    cin.getline(sesso,8,'\n');
+            }
+            while (strcmp(sesso,"femmina")==0 && strcmp(sesso,"maschio")==0);
+            if (strcmp(sesso,"femmina")==0)
+            {
+                    do
+                    {
+                            cout<<"Cara "<<nome<<", dall'alto dei tuoi "<<eta<<" anni pensi di essere più intelligente di me?"<<endl;
+                            cin.getline(risp,3,'\n');
+                    }
+                    while (strcmp(risp,"sì")==0 && strcmp(risp,"si")==0 && strcmp(risp,"no")==0);
+                    if (strcmp(risp,"no")!=0)
+                    {
+                            do
+                            {
+                                    cout<<"Sicura?"<<endl;
+                                    cin.getline(risp,3,'\n');
+                                    i++;
+                            }
+                            while (strcmp(risp,"no")!=0);
+                            cout<<"Te l'ho dovuto chiedere "<<i<<" volte per farti capire che sei scema!"<<endl;
+                    }
+                    else
+                            cout<<"Meno male che lo sai"<<endl;
+            }
+            else
+                    {
+                    do
+                    {
+                            cout<<"Caro "<<nome<<", dall'alto dei tuoi "<<eta<<" anni pensi di essere più intelligente di me?"<<endl;
+                            cin.getline(risp,3,'\n');
+                    }
+                    while (strcmp(risp,"sì")==0 && strcmp(risp,"si")==0 && strcmp(risp,"no")==0);
+                    if (strcmp(risp,"no")!=0)
+                    {
+                            do
+                            {
+                                    cout<<"Sicuro?"<<endl;
+                                    cin.getline(risp,3,'\n');
+                                    i++;
+                            }
+                            while (strcmp(risp,"no")!=0);
+                            cout<<"Te l'ho dovuto chiedere "<<i<<" volte per farti capire che sei scemo!"<<endl;
+                    }
+                    else
+                            cout<<"Meno male che lo sai"<<endl;
+            }
+            return 0;
+    }
